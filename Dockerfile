@@ -6,7 +6,7 @@ RUN apt-get install python3 -y
 
 RUN apt-get install python3-pip -y
 
-RUN pip -r required.txt
+RUN pip install -r requirements.txt
 
 WORKDIR /workspace
 

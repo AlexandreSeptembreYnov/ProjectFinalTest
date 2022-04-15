@@ -59,9 +59,8 @@ def test_person_gained_life_points():
 
 def test_health_potion():
     test_person = Person("test")
-    popo = HealthPotion()
     life = test_person.get_life_points()
-    popo.was_used_by(test_person)
+    HealthPotion.was_used_by(test_person)
     life_after_use_popo = test_person.get_life_points()
     result = life_after_use_popo
     expected_result = life + 10
