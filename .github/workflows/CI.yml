@@ -2,9 +2,14 @@ name: CI
 on: [push]
 jobs:
   test_build_run:
-    runs-on: self_hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: docker login
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Run tests
         run : |
           pip install pytest
