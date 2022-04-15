@@ -18,5 +18,11 @@ jobs:
         run:
           docker build -t test .
       - name: run docker image
-        run:
+        run: 
           docker run test
+      - name: docker tag
+        run: 
+          docker tag test:latest aseptembre/project_final_test:test_push
+      - name: docker push
+        run: 
+          docker push aseptembre/project_final_test:test_push
