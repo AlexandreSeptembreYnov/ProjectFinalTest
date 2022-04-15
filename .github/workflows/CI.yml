@@ -1,8 +1,8 @@
 name: CI
 on: [push]
 jobs:
-  name_of_job:
-    runs-on: ubuntu-latest
+  test_build_run:
+    runs-on: self_hosted
     steps:
       - uses: actions/checkout@v2
       - name: Run tests
